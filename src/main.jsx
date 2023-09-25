@@ -6,9 +6,10 @@ import {
 } from "react-router-dom";
 import './index.css'
 import MainLayout from './Layout/MainLayout/MainLayout';
-import Home from './component/Home/Home';
-import Donation from './component/Donation/Donation';
-import Statistics from './component/Statistics/Statistics';
+import Home from './pages/Home/Home';
+import Donation from './pages/Donation/Donation';
+import Statistics from './pages/Statistics/Statistics';
+
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,8 @@ const router = createBrowserRouter([
     children: [
       {
         path:'/',
-        element:<Home></Home>
+        element:<Home></Home>,
+        loader:()=> fetch('/donation.json')
       },
       {
         path:'/donation',
