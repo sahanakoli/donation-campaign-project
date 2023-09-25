@@ -1,31 +1,42 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
+import { useState } from "react";
 
-const Banner = ({setCategories, catgories}) => {
+
+
+const Banner = ({categories}) => {
+
+      const [category, setCategory] = useState()
 
     const handleSearch = (e)=>{
         e.preventDefault()
     
         const searchValue = e.target.search.value
-        console.log(searchValue);
+      
         localStorage.setItem("search",searchValue)
     
     
-        const filterData = catgories?.filter(category=> category.category_name === searchValue)
-        setCategories(filterData)
-    
-        console.log(filterData);
+        const findCategory = categories?.filter(category=> category.category_name === searchValue)
+        setCategory(findCategory)
+
     
       }
     return (
-        <div className=" h-[50vh] bg-slate-500 mt-6">
+       
+        <div className=" h-[70vh]  -mt-28">
             
       <img
-        className="h-full w-full"
-        src=""
+        className="h-full w-full opacity-10"
+        src="https://i.ibb.co/ZHgnGH9/Rectangle-4281.png"
         alt=""
       />
-      <div className="searchbar absolute bottom-[43%] w-full px-20">
+      <div className=" flex justify-center items-center">
+        <h2 className=" text-5xl font-bold absolute bottom-[65%] ">I Grow By Helping People In Need</h2>
+      </div>
+      <div className=" flex justify-center items-center">
+      <div className="searchbar absolute bottom-[53%] w-3/12 ">
         <form onSubmit={handleSearch}>
           <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
             Search
@@ -55,12 +66,13 @@ const Banner = ({setCategories, catgories}) => {
             />
             <button
               type="submit"
-              className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-white absolute right-2.5 bottom-2.5 bg-[#FF444A]  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
             >
               Search
             </button>
           </div>
         </form>
+      </div>
       </div>
         </div>
     );

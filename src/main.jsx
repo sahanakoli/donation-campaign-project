@@ -9,12 +9,17 @@ import MainLayout from './Layout/MainLayout/MainLayout';
 import Home from './pages/Home/Home';
 import Donation from './pages/Donation/Donation';
 import Statistics from './pages/Statistics/Statistics';
+import ErrorPage from './component/ErrorPage/ErrorPage';
+import CategoryCard from './pages/CategoryCard/CategoryCard';
+import Banner from './component/Banner/Banner';
+
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path:'/',
@@ -28,6 +33,16 @@ const router = createBrowserRouter([
       {
         path:'/statistics',
         element:<Statistics></Statistics>
+      },
+      {
+        path:'/categories/:id',
+        element:<CategoryCard></CategoryCard>,
+        loader:()=> fetch('/donation.json')
+      },
+      {
+        path:'/categories/:category_name',
+        element:<Banner></Banner>,
+        loader:()=> fetch('/donation.json')
       }
     ]
   },
