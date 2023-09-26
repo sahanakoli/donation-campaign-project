@@ -15,7 +15,7 @@ const CategoriesCard = ({categories}) => {
         <div className="">
             
             <div className="card w-full mx-auto bg-base-100 shadow-xl">
-   <figure className=" w-full px-0"><img src={image} alt="" /></figure>
+   <figure><img className=" w-full " src={image} alt="" /></figure>
    <div className="card-body">
      <h2 className="card-title ">{category_name}</h2>
      <p>{title}</p>

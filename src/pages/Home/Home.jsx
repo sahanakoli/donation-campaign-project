@@ -2,6 +2,7 @@
 import Banner from "../../component/Banner/Banner";
 import Categories from "../../component/Categories/Categories";
 
+
 const Home = () => {
 
     
