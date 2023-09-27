@@ -3,8 +3,6 @@ import { useLoaderData, useParams } from "react-router-dom";
 import Category from "../../component/Category/Category";
 
 
-
-
 const CategoryCard = () => {
 
     const [category, setCategory] = useState({});
